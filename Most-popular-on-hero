@@ -1,0 +1,42 @@
+Feature: Create a secondary view for the hero module to promote Most Popular content. 
+
+@front @hero
+Scenario: Verify that I can open and close the "Most Popular" panel of the 6-up hero
+  Given I am viewing the variant "6-up-with-carousel" of a "hero" module on a "card"
+  When I click the "Most Popular" link
+  Then the "Most Popular" view "opens"
+  When I click the "Go Back" link
+  Then the "Most Popular" view "closes"
+
+@front @hero
+Scenario: Verify that I can open and close the "Most Popular" panel of the headline pack hero
+  Given I am viewing the variant "headline-pack" of a "hero" module on a "card"
+  When I click the "Most Popular" link
+  Then the "Most Popular" view "opens"
+  When I click the "Go Back" link
+  Then the "Most Popular" view "closes"
+
+  @front @hero @pending
+  Scenario: Verify that the hero spike appears
+    Given I am on the hero module showcase page
+    When I am viewing the "super hero" with spikes
+    Then I should see the "Read Story" spike
+      And I should see the "Text" spike
+      And I should see the "Video" spike
+      And I should see the "Gallery" spike
+      And I should see the "Interactive" spike
+
+@front @hero @pending
+Scenario: Veridy that the hero spike is clickable
+  Given I am on the hero module showcase page
+  When I click on the "Read Story" spike
+  Then I should be taken to that page
+  When I click on the "Text" spike
+  Then I should be taken to that page
+  When I click on the "Video" spike
+  Then I should be taken to that page
+  When I click on the "Gallery" spike
+  Then I should be taken to that page
+  When I click on the "Interactive" spike
+  Then I should be taken to that page
+
