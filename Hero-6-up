@@ -1,0 +1,24 @@
+Feature: Hero-6-up
+
+@hero
+Scenario: Verify that I am able to open content from the hero 6 pack
+Given that I am on the hero-6-pack module showcase page
+When I click on the image in position "1"
+Then I am taken to that page
+When I click on the headline in position "1"
+Then I am taken to that page
+When I click on the image in position "2"
+Then I am taken to that page
+When I click on the headline in position "2"
+Then I am taken to that page
+
+
+@hero
+Scenario: Verify that I see the asset icon when I mouse over the items in the headline list pane
+Given that I am on the hero-6-pack module showcase page
+When I mouse over the hero list item "1"
+Then I see the hero list info
+When I click on the hero list item "1"
+Then I am taken to that page
+When I click on hero text spike in position "1"
+Then I am take to that page
