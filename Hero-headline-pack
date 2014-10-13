@@ -1,0 +1,31 @@
+Feature: Create a module that presents users a large array of content to view. The lead story should have more visual weight.
+
+@front @hero
+Scenario: Verify that I can open an asset by clicking on the "read/view/other spike" link.
+    Given I am viewing the variant "headline-pack" of a "hero" module on a "card"
+    When I click on the "spike" of the asset in position "1"
+    Then I should be taken to that page
+
+@front @hero
+Scenario: Verify that I can open an asset by clicking on the "headline" link.
+    Given I am viewing the variant "headline-pack" of a "hero" module on a "card"
+    When I click on the "headline" of the asset in position "1"
+    Then I should be taken to that page
+
+@front @hero
+Scenario: Verify that I can open an asset by clicking on the "image" link.
+    Given I am viewing the variant "headline-pack" of a "hero" module on a "card"
+    When I click on the "image" of the asset in position "1"
+    Then I should be taken to that page
+
+@front @hero
+Scenario: Verify that I can open an asset from the first link in the Top News list
+    Given I am viewing the variant "headline-pack" of a "hero" module on a "card"
+    When I click on the "list-link" of the asset in position "1"
+    Then I should be taken to that page
+
+@front @hero
+Scenario: Verify that I can open an asset from the second link in the Top News list
+    Given I am viewing the variant "headline-pack" of a "hero" module on a "card"
+    When I click on the "list-link" of the asset in position "2"
+    Then I should be taken to that page
