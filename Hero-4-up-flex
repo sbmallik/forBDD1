@@ -1,0 +1,12 @@
+Feature: Hero 4 Up flex
+
+@hero
+Scenario: Verify that I am able to open content from the hero 4 up flex
+Given that I am on the hero-4-up-flex module showcase page
+When I click on the image in position "1"
+Then I am taken to that page
+When I click on the image in position "2"
+When I click on the headline in position "1"
+Then I am taken to that page
+When I click on the headline in position "3"
+Then I am taken to that page
