@@ -1,0 +1,57 @@
+Feature: The gallery module on a front will display all the images for the most recent album in that gallery
+     The user can also view different galleries by selecting them from the left rail
+     
+@gallery @front   
+Scenario: Verify that the user can navigate through the images for each gallery in the module
+  Given that I am on a front with a gallery module
+    And Gallery "1" is selected on the left rail
+  When I "click" on the gallery viewport
+  Then image number "2" is displayed in the viewport
+
+@gallery @front  
+Scenario: Verify that the user can navigate through the images for each gallery in the module
+  Given that I am on a front with a gallery module
+    And Gallery "1" is selected on the left rail
+    And I "hover" on the gallery viewport
+  When I click on the "right" gallery arrow
+  Then image number "2" is displayed in the viewport
+
+@gallery @front  
+Scenario: Verify that the user can navigate through the images for each gallery in the module
+  Given that I am on a front with a gallery module
+    And Gallery "1" is selected on the left rail
+    And I "hover" on the gallery viewport
+  When I click on the "right" gallery arrow
+  Then image number "2" is displayed in the viewport
+  When I click on the "left" gallery arrow
+  Then image number "1" is displayed in the viewport
+
+@gallery @front  
+Scenario: Verify that the user can navigate through the images for each gallery in the module
+  Given that I am on a front with a gallery module
+    And Gallery "1" is selected on the left rail
+    And I "hover" on the gallery viewport
+  When I click on Gallery thumbnail "1"
+  Then image number "1" is displayed in the viewport
+
+@gallery @front
+Scenario: Verify that the user can navigate to the end-slate
+  Given that I am on a front with a gallery module
+    And Gallery "1" is selected on the left rail
+    And I "hover" on the gallery viewport
+  When I click on the right arrow until I am past the last image
+  Then the endslate will display
+
+@gallery @front  
+Scenario: Verify that the user can navigate through the different galleries on the left rail
+  Given that I am on a front with a gallery module
+    And Gallery "1" is selected on the left rail
+  When I click on tab "2" under the galleries suspender
+  Then images from front gallery "2" are displayed
+
+@gallery @front  
+Scenario: Verify that the user can navigate through the different galleries on the left rail
+  Given that I am on a front with a gallery module
+  When I click on tab "2" under the galleries suspender
+  Then Gallery "2" is selected on the left rail
+    And images from front gallery "2" are displayed
