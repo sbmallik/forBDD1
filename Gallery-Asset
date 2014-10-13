@@ -1,0 +1,63 @@
+Feature: A photogallery should allow the user to navigate through a gallery on an overlay page
+
+Background: 
+  Given that I open a gallery from a front
+
+@gallery @overlay
+Scenario: Verify that I am able to navigate through the images
+  Given I click on Gallery thumbnail "3"
+  When I "hover" on the gallery viewport
+    And I click on the "left" gallery arrow
+  Then image number "2" is displayed in the viewport
+
+@gallery @overlay
+Scenario: Verify that the image displays the caption bar
+  Given I "hover" on the gallery viewport
+  Then the caption bar should "appear"
+
+@gallery @overlay
+Scenario: Verify that when I can navigate to a particular image by clicking on the thumbnail
+  Given I click on Gallery thumbnail "4"
+  Then image number "4" is displayed in the viewport
+
+@gallery @overlay
+Scenario: Verify that the user can get to the endslate
+  Given I click on the right arrow until I am past the last image
+  Then the endslate will display
+
+@gallery @overlay
+Scenario: Verify that I can go to the Fullscreen view 
+  Given I "hover" on the gallery viewport
+  When I click on the "fullscreen" gallery button
+  Then I am on the Fullscreen gallery view
+
+@gallery @overlay
+Scenario: Verify that I can come back to the image I was from Fullscreen view
+  Given I click on Gallery thumbnail "5"
+    And I enable the Fullscreen gallery view
+  When I click on the "X" gallery button
+  Then image number "5" is displayed in the viewport
+
+@gallery @overlay
+Scenario: Verify that I am able to navigate through the gallery in Fullscreen view 
+  Given I enable the Fullscreen gallery view
+  When I click on the "right" gallery arrow
+  Then image number "2" is displayed in the viewport
+  When I click on the "left" gallery arrow
+  Then image number "1" is displayed in the viewport
+
+@gallery @overlay
+Scenario: Verify that I am able to view caption in Fullscreen view
+  Given I enable the Fullscreen gallery view
+  When I click on the "Show Captions" gallery button
+  Then the caption bar should "appear"
+  When I click on the "Hide Captions" gallery button
+  Then the caption bar should "disappear"
+
+@gallery @overlay @test
+Scenario: Verify that I am able to view the thumbnails in Fullscreen view
+  Given I enable the Fullscreen gallery view
+  When I click on the "Show Thumbnails" gallery button
+  Then the thumbnail bar should "appear"
+  When I click on the "Hide Thumbnails" gallery button
+  Then the thumbnail bar should "disappear"
