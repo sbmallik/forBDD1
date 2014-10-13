@@ -1,0 +1,13 @@
+Feature: Hero 5 up
+
+@hero
+Scenario: Verify that I am able to open content from the hero 5 up
+Given that I am on the hero-5-up module showcase page
+When I click on the image in position "1"
+Then I am taken to that page
+When I click on the headline in position "1"
+Then I am taken to that page
+When I click on the image in position "3"
+Then I am taken to that page
+When I click on the headline in position "3"
+Then I am taken to that page
