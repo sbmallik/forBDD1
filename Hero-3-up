@@ -1,0 +1,13 @@
+Feature: Create a module that presents users a large array of content to view. The lead story should have more visual weight.
+
+@stag-front @hero
+Scenario: Verify that I can open an asset from the first link in the 3up list
+    Given I am viewing the variant "3up" of a "hero" module on a "stag-front"
+    When I click on the "tile" of the asset in position "1"
+    Then I should be taken to that page
+
+@stag-front @hero
+Scenario: Verify that I can open an asset from the first link in the 3up list
+    Given I am viewing the variant "3up" of a "hero" module on a "stag-front"
+    When I click on the "tile" of the asset in position "3"
+    Then I should be taken to that page
